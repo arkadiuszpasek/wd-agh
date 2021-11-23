@@ -1,4 +1,3 @@
-
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
@@ -7,10 +6,9 @@ export const theme = createTheme({
       main: "#2e7d32",
       // light: "#60ad5e",
       // dark: "#005005",
-
     },
     secondary: {
-      main: "#e64a19"
-    }
-  }
+      main: "#e64a19",
+    },
+  },
 });

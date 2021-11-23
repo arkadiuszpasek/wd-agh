@@ -1,3 +1,3 @@
 export const strings = {
-  "virtual-university": "Writualny Dziekanat"
+  "virtual-university": "Writualny Dziekanat",
 };

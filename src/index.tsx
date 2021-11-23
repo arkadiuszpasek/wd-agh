@@ -2,17 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { L10nProvider } from "./components/L10n/L10nProvider";
+import { L10nProvider } from "./models/intl/L10n/L10nProvider";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./styles/palette";
+import { UserContextProvider } from "./models/user";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <L10nProvider>
-        <App />
-      </L10nProvider>
-    </ThemeProvider>
+    <UserContextProvider>
+      <ThemeProvider theme={theme}>
+        <L10nProvider>
+          <App />
+        </L10nProvider>
+      </ThemeProvider>
+    </UserContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

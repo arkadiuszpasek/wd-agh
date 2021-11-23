@@ -1,13 +1,17 @@
-import React from 'react';
-import './App.css';
-import { Bar } from './components/bar/Bar';
+import React from "react";
+import "./App.css";
+import { useUser } from "./models/user";
+import { AuthorizedApp } from "./pages/AuthorizedApp/AuthorizedApp";
+import { UnauthorizedApp } from "./pages/UnauthorizedApp/UnauthorizedApp";
 
 function App() {
-  return (
-    <div className="App">
-      <Bar />
-    </div>
-  );
+  const { user } = useUser();
+
+  if (user) {
+    return <AuthorizedApp />;
+  }
+
+  return <UnauthorizedApp />;
 }
 
 export default App;
