@@ -10,4 +10,4 @@ export const useLoggerUser = (): User => {
   }
 
   return context.user;
-}
+};
