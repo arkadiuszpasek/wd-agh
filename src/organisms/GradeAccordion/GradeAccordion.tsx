@@ -1,24 +1,16 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Divider, Stack, Typography } from "@mui/material";
-import React from "react";
-import { FormattedDate } from "react-intl";
-import { L10n } from "../../models/intl/L10n/L10n";
-import { GradeSummary } from "../../molecules/GradeSummary/GradeSummary";
-import { Teacher } from "../../types/Teacher";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Accordion, AccordionDetails, AccordionSummary, Stack, Typography } from "@mui/material";
+import React from "react";
+import { GradeSummary } from "../../molecules/GradeSummary/GradeSummary";
+import { TGradeSummary } from './GradeSummary';
 
-interface Props {
-  grade: TGrade;
-  mainTeacher: Teacher;
-  name: string;
-  details: React.ComponentProps<typeof GradeSummary>;
-}
 
-export const GradeAccordion = ({ grade, mainTeacher, name, details }: Props) => (
+export const GradeAccordion = ({ grade, mainTeacher, name, details }: TGradeSummary) => (
   <Accordion>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel1a-content"
-      id="panel1a-header"
+      id={"panel_header" + name}
     >
       <Stack>
         <Typography variant="overline">{name}</Typography>

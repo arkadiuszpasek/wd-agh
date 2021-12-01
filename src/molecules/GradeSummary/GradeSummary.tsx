@@ -2,26 +2,10 @@ import { Box, Divider, Stack, Typography } from "@mui/material";
 import React from "react";
 import { FormattedDate } from "react-intl";
 import { L10n } from "../../models/intl/L10n/L10n";
-import { Teacher } from "../../types/Teacher";
+import { TGradeSummaryDetails } from "../../organisms/GradeAccordion/GradeSummary";
 
-interface TimedGrade {
-  grade: TGrade;
-  timestamp: TTimestamp
-}
-interface TypedSummary {
-  lessonType: string;
-  lengthHours: number;
-  group: string;
-  grades?: TimedGrade[];
-}
-interface Props {
-  grade?: TGrade;
-  teachers: Teacher[];
-  type: string;
-  ects: number;
-  summaries: TypedSummary[]
-}
-export const GradeSummary = (props: Props) => {
+
+export const GradeSummary = (props: TGradeSummaryDetails) => {
   return (
     <Stack
       divider={<Divider />}
@@ -35,6 +19,10 @@ export const GradeSummary = (props: Props) => {
         <Box display="flex" justifyContent="space-between" alignItems="flex-start">
           <Typography variant="overline"><L10n id="grade.type" /></Typography>
           <Typography variant="overline">{props.type}</Typography>
+        </Box>
+        <Box display="flex" justifyContent="space-between" alignItems="flex-start">
+          <Typography variant="overline"><L10n id="grade.finalGrade" /></Typography>
+          <Typography variant="overline">{props.grade || <L10n id="grade.finalGrade.empty" />}</Typography>
         </Box>
       </Stack>
 

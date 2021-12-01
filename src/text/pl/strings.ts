@@ -14,4 +14,11 @@ export const strings = {
   "grade.type": "Typ przedmiotu",
   "grade.length": "Liczba godzin",
   "grade.ects": "ECTS",
+  "grade.finalGrade": "Ocena końcowa",
+  "grade.finalGrade.empty": "Brak oceny końcowej",
+
+  "gradePage.accumulatedEcts": "Zebrane punkty ECTS",
+  "gradePage.avgPerYear": "Średnia ważona za rok",
+  "gradePage.avgPerSemester": "Średnia ważona za semestr"
+
 };
