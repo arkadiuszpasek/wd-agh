@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { LoginDialog } from './LoginDialog';
-import { renderStoryBook } from '../../utils/sb/renderStoryBook';
-
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { LoginDialog } from "./LoginDialog";
+import { renderStoryBook } from "../../utils/sb/renderStoryBook";
 
 export default {
-  title: 'LoginDialog',
+  title: "LoginDialog",
   component: LoginDialog,
 } as ComponentMeta<typeof LoginDialog>;
 
 export const DefaultDialog: ComponentStory<typeof LoginDialog> = () =>
-  renderStoryBook(<LoginDialog />)
-
+  renderStoryBook(<LoginDialog />);

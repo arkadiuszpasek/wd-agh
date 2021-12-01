@@ -2,7 +2,7 @@ import { Teacher } from "../../types/Teacher";
 
 export interface TTimedGrade {
   grade: TGrade;
-  timestamp: TTimestamp
+  timestamp: TTimestamp;
 }
 export interface TGradeLessonsSummary {
   lessonType: string;
@@ -15,7 +15,7 @@ export interface TGradeSummaryDetails {
   teachers: Teacher[];
   type: string;
   ects: number;
-  summaries: TGradeLessonsSummary[]
+  summaries: TGradeLessonsSummary[];
 }
 
 export interface TGradeSummary {

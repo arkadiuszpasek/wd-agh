@@ -16,17 +16,23 @@ const Wrapper = styled("div")(({ theme }) => ({
 }));
 const sxBox: React.CSSProperties = {
   // clipPath: 'polygon(20% 0, 80% 0, 100% 100%, 0 100%)',
-  padding: '5px 25px'
+  padding: "5px 25px",
 };
 export const LoginDialog = () => {
   return (
-    <Container maxWidth='sm'>
-      <Paper sx={{ padding: "10px "}}>
+    <Container maxWidth="sm">
+      <Paper sx={{ padding: "10px " }}>
         <Box display="flex" flexDirection="column">
-          <Typography variant="h1"><L10n id="login" /></Typography>
+          <Typography variant="h1">
+            <L10n id="login" />
+          </Typography>
           <Box display="flex">
-            <Box sx={{...sxBox, bgcolor: 'primary.main'}}><L10n id="student" /></Box>
-            <Box sx={{...sxBox, bgcolor: 'secondary.main'}}><L10n id="teacher" /></Box>
+            <Box sx={{ ...sxBox, bgcolor: "primary.main" }}>
+              <L10n id="student" />
+            </Box>
+            <Box sx={{ ...sxBox, bgcolor: "secondary.main" }}>
+              <L10n id="teacher" />
+            </Box>
           </Box>
           <LoginInputs />
         </Box>
