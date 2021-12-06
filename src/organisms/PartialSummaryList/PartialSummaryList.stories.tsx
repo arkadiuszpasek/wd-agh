@@ -1,6 +1,10 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { generatePartialSummary, getTGradeSummaries } from "../../utils/sb/generator";
+import {
+  generatePartialSummary,
+  getPartialSummaries,
+  getTGradeSummaries,
+} from "../../utils/sb/generator";
 import { renderStoryBook } from "../../utils/sb/renderStoryBook";
 import { PartialSummaryList } from "./PartialSummaryList";
 
@@ -9,6 +13,6 @@ export default {
   component: PartialSummaryList,
 } as ComponentMeta<typeof PartialSummaryList>;
 
-const summaries = [1,2,3,4].map(() => generatePartialSummary());
+const summaries = getPartialSummaries()
 export const DefaultSummary: ComponentStory<typeof PartialSummaryList> = () =>
   renderStoryBook(<PartialSummaryList summaries={summaries} />);

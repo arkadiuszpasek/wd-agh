@@ -11,7 +11,11 @@ interface Props {
 export const GradePage = ({ summaries }: Props) => {
   const calculateEcts = () => {
     return summaries.reduce(
-      (prev, s) => prev + (s.details.grade?.grade && s.details.grade.grade > 2 ? s.details.ects : 0),
+      (prev, s) =>
+        prev +
+        (s.details.grade?.grade && s.details.grade.grade > 2
+          ? s.details.ects
+          : 0),
       0
     );
   };
@@ -38,8 +42,10 @@ export const GradePage = ({ summaries }: Props) => {
 
   return (
     <Box>
-      <Typography variant="h4"><L10n id="gradePage.summary" /></Typography>
-      <Divider sx={{ marginBottom: 2 }}/>
+      <Typography variant="h4">
+        <L10n id="gradePage.summary" />
+      </Typography>
+      <Divider sx={{ marginBottom: 2 }} />
       <Stack>
         <Typography variant="overline">
           <L10n id="gradePage.accumulatedEcts" />: {calculateEcts() || 0}
@@ -53,7 +59,9 @@ export const GradePage = ({ summaries }: Props) => {
       </Stack>
 
       <Divider sx={{ marginBottom: 2 }} />
-      <Typography variant="h4"><L10n id="gradePage.subjects" /></Typography>
+      <Typography variant="h4">
+        <L10n id="gradePage.subjects" />
+      </Typography>
       <Divider sx={{ marginBottom: 2 }} />
       <Stack spacing={3}>
         {summaries.map((s) => (

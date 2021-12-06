@@ -1,12 +1,18 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
-import React from "react";
+import { Box, Divider, Link, Stack, Breadcrumbs, Typography } from "@mui/material";
+import React, { useState } from "react";
 import { FormattedDate } from "react-intl";
 import { L10n } from "../../models/intl/L10n/L10n";
-import { TGradeSummaryDetails, TTimedGrade } from "../../organisms/GradeAccordion/GradeSummary";
+import {
+  TGradeSummary,
+  TGradeSummaryDetails,
+  TTimedGrade,
+} from "../../organisms/GradeAccordion/GradeSummary";
+import { PartialSummaryList } from "../../organisms/PartialSummaryList/PartialSummaryList";
 
-export const GradeSummary = (props: TGradeSummaryDetails) => {
+export const GradeSummary = ({ name, details}: TGradeSummary) => {
+  const [isDisplayingPartials, setIsDisplayingPartials] = useState(false);
   const getTypeText = () => {
-    switch (props.type) {
+    switch (details.type) {
       case "E":
         return <L10n id="grade.type.e" />;
       case "R":
@@ -14,44 +20,46 @@ export const GradeSummary = (props: TGradeSummaryDetails) => {
       default:
         return <L10n id="grade.type.p" />;
     }
-  }
-  const getLessonTypeText = (lessonType: TGradeSummaryDetails["summaries"][0]["lessonType"]) => {
+  };
+  const getLessonTypeText = (
+    lessonType: TGradeSummaryDetails["summaries"][0]["lessonType"]
+  ) => {
     switch (lessonType) {
       case "A":
         return <L10n id="grade.lessonType.aud" />;
       case "L":
         return <L10n id="grade.lessonType.labs" />;
-        case "P":
-          return <L10n id="grade.lessonType.proj" />;
+      case "P":
+        return <L10n id="grade.lessonType.proj" />;
       default:
         return <L10n id="grade.lessonType.lectures" />;
     }
-  }
+  };
   const renderTimedGrade = (timedGrade: TTimedGrade, isFirst: boolean) => {
     return (
-<Stack key={timedGrade.timestamp} alignItems="flex-end">
-                    <Typography
-                      color={isFirst ? undefined : "text.disabled"}
-                      lineHeight={isFirst ? 1.5 : 1.2}
-                      variant="overline"
-                    >
-                      {timedGrade.grade.toFixed(1)}
-                    </Typography>
-                    <Typography
-                      color={isFirst ? undefined : "text.disabled"}
-                      lineHeight={isFirst ? 1.5 : 1.2}
-                      variant="overline"
-                    >
-                      <FormattedDate value={timedGrade.timestamp} />
-                    </Typography>
-                  </Stack>
-    )
-  }
-  return (
+      <Stack key={timedGrade.timestamp} alignItems="flex-end">
+        <Typography
+          color={isFirst ? undefined : "text.disabled"}
+          lineHeight={isFirst ? 1.5 : 1.2}
+          variant="overline"
+        >
+          {timedGrade.grade.toFixed(1)}
+        </Typography>
+        <Typography
+          color={isFirst ? undefined : "text.disabled"}
+          lineHeight={isFirst ? 1.5 : 1.2}
+          variant="overline"
+        >
+          <FormattedDate value={timedGrade.timestamp} />
+        </Typography>
+      </Stack>
+    );
+  };
+  const renderSummary = () => (
     <Stack divider={<Divider />} spacing={1}>
-      <Typography variant="overline" color="text.primary">
+      <Link component="button" alignSelf="flex-start" onClick={() => setIsDisplayingPartials(true)} variant="overline" color="text.primary">
         <L10n id="grade.seePartials" />
-      </Typography>
+      </Link>
       <Stack>
         <Box
           display="flex"
@@ -61,7 +69,7 @@ export const GradeSummary = (props: TGradeSummaryDetails) => {
           <Typography variant="overline">
             <L10n id="grade.ects" />
           </Typography>
-          <Typography variant="overline">{props.ects}</Typography>
+          <Typography variant="overline">{details.ects}</Typography>
         </Box>
         <Box
           display="flex"
@@ -82,12 +90,16 @@ export const GradeSummary = (props: TGradeSummaryDetails) => {
             <L10n id="grade.finalGrade" />
           </Typography>
           <Typography variant="overline">
-            {props.grade ? renderTimedGrade(props.grade, true) : <L10n id="grade.finalGrade.empty" />}
+            {details.grade ? (
+              renderTimedGrade(details.grade, true)
+            ) : (
+              <L10n id="grade.finalGrade.empty" />
+            )}
           </Typography>
         </Box>
       </Stack>
 
-      {props.summaries.map((summary) => (
+      {details.summaries.map((summary) => (
         <Stack key={summary.lessonType}>
           <Box
             display="flex"
@@ -97,7 +109,9 @@ export const GradeSummary = (props: TGradeSummaryDetails) => {
             <Typography variant="overline">
               <L10n id="grade.lessonType" />
             </Typography>
-            <Typography variant="overline">{getLessonTypeText(summary.lessonType)}</Typography>
+            <Typography variant="overline">
+              {getLessonTypeText(summary.lessonType)}
+            </Typography>
           </Box>
           <Box
             display="flex"
@@ -129,9 +143,9 @@ export const GradeSummary = (props: TGradeSummaryDetails) => {
                 <L10n id="grade.grade" />
               </Typography>
               <Stack spacing={0.5} mt={0.5}>
-                {summary.grades.map((grade, i) => (
+                {summary.grades.map((grade, i) =>
                   renderTimedGrade(grade, i === 0)
-                ))}
+                )}
               </Stack>
             </Box>
           )}
@@ -147,7 +161,7 @@ export const GradeSummary = (props: TGradeSummaryDetails) => {
           <L10n id="grade.teacher" />
         </Typography>
         <Stack alignItems="flex-end" mt={0.5}>
-          {props.teachers.map((teacher) => (
+          {details.teachers.map((teacher) => (
             <Typography
               key={teacher.displayName}
               variant="overline"
@@ -160,4 +174,18 @@ export const GradeSummary = (props: TGradeSummaryDetails) => {
       </Box>
     </Stack>
   );
+
+  const renderPartials = () => (
+    <Box>
+      <Breadcrumbs aria-label="breadcrumb">
+        <Link color="text.disabled" component="button" onClick={() => setIsDisplayingPartials(false)}>
+          <Typography>{name}</Typography>
+        </Link>
+        <Typography color="text.primary"><L10n id="grade.partials" /></Typography>
+      </Breadcrumbs>
+      <PartialSummaryList summaries={details.partialGrades} />
+    </Box>
+  )
+
+  return isDisplayingPartials ? renderPartials() : renderSummary();
 };

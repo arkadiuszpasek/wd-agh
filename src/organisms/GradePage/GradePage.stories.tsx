@@ -9,6 +9,5 @@ export default {
   component: GradePage,
 } as ComponentMeta<typeof GradePage>;
 
-
 export const DefaultSummary: ComponentStory<typeof GradePage> = () =>
   renderStoryBook(<GradePage summaries={getTGradeSummaries()} />);

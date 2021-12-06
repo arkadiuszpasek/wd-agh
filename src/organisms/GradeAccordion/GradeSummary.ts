@@ -1,3 +1,4 @@
+import { TPartialSummary } from "../../molecules/PartialSummary/TPartialSummary";
 import { Teacher } from "../../types/Teacher";
 
 export interface TTimedGrade {
@@ -16,6 +17,7 @@ export interface TGradeSummaryDetails {
   type: "P" | "R" | "E";
   ects: number;
   summaries: TGradeLessonsSummary[];
+  partialGrades: TPartialSummary[];
 }
 
 export interface TGradeSummary {

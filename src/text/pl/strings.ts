@@ -24,10 +24,11 @@ export const strings = {
   "grade.finalGrade": "Ocena końcowa",
   "grade.finalGrade.empty": "Brak oceny końcowej",
   "grade.seePartials": "Zobacz oceny cząstkowe",
+  "grade.partials": "Oceny cząstkowe",
 
   "gradePage.accumulatedEcts": "Zebrane punkty ECTS",
   "gradePage.avgPerYear": "Średnia ważona za rok",
   "gradePage.avgPerSemester": "Średnia ważona za semestr",
   "gradePage.summary": "Podsumowanie",
-  "gradePage.subjects": "Przedmioty"
+  "gradePage.subjects": "Przedmioty",
 };

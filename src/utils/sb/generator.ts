@@ -1,6 +1,16 @@
 import { TPartialSummary } from "../../molecules/PartialSummary/TPartialSummary";
-import { TGradeSummaryDetails, TGradeSummary, TTimedGrade } from "../../organisms/GradeAccordion/GradeSummary";
+import {
+  TGradeSummaryDetails,
+  TGradeSummary,
+  TTimedGrade,
+} from "../../organisms/GradeAccordion/GradeSummary";
 import { Teacher } from "../../types/Teacher";
+
+export const getRandom = <T extends unknown>(items: T[]) => {
+  const ind = Math.floor((Math.random() * 1000) % items.length);
+
+  return items[ind];
+}
 
 export const getTGradeSummaries = (): TGradeSummary[] => {
   return [
@@ -8,7 +18,8 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
       name: "Aspekty prawne i organizacja przedsiębiorstwa",
       mainTeacher: new Teacher("Marta", "Kraszewska"),
       details: {
-        grade: { grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp},
+        partialGrades: [],
+        grade: { grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp },
         teachers: [new Teacher("Marta", "Kraszewska")],
         type: "P",
         ects: 2,
@@ -31,15 +42,20 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
             ],
           },
         ],
-      }
+      },
     },
 
     {
       name: "Hurtownie danych",
       mainTeacher: new Teacher("Leszek", "Kotulski"),
       details: {
-        grade: { grade: 3 as TGrade, timestamp: randomDate() as TTimestamp},
-        teachers: [new Teacher("Leszek", "Kotulski"), new Teacher("Adam", "Sędziwy"), new Teacher("Artur", "Basiura")],
+        partialGrades: [],
+        grade: { grade: 3 as TGrade, timestamp: randomDate() as TTimestamp },
+        teachers: [
+          new Teacher("Leszek", "Kotulski"),
+          new Teacher("Adam", "Sędziwy"),
+          new Teacher("Artur", "Basiura"),
+        ],
         type: "E",
         ects: 3,
         summaries: [
@@ -60,14 +76,22 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
             ],
           },
         ],
-      }
+      },
     },
 
     {
       name: "Pracownia inżynierska dyplomowa",
       mainTeacher: new Teacher("Adam", "Sędziwy"),
       details: {
-        grade: { grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp},
+        partialGrades: [
+          {grade: 4 as TGrade, timestamp: randomDate() as TTimestamp,
+          title: "Prezentacja nr 3"},
+          {grade: 3.5 as TGrade, timestamp: randomDate() as TTimestamp,
+          description: "Dobrze zaprezentowana, błędy merytoryczne", title: "Prezentacja nr 2"},
+          {grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp,
+          title: "Prezentacja nr 1"},
+        ],
+        grade: { grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp },
         teachers: [new Teacher("Adam", "Sędziwy")],
         type: "P",
         ects: 1,
@@ -81,15 +105,22 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
             ],
           },
         ],
-      }
+      },
     },
 
     {
       name: "Studio projektowe 2",
       mainTeacher: new Teacher("Tomasz", "Szmuc"),
       details: {
-        grade: {grade:4 as TGrade, timestamp: randomDate() as TTimestamp},
-        teachers: [new Teacher("Tomasz", "Szmuc"), new Teacher("Radosław", "Klimek"), new Teacher("Jacek", "Piwowarczyk"), new Teacher("Tomasz", "Szmuc"), new Teacher("Andrzej", "Bielecki")],
+        partialGrades: [],
+        grade: { grade: 4 as TGrade, timestamp: randomDate() as TTimestamp },
+        teachers: [
+          new Teacher("Tomasz", "Szmuc"),
+          new Teacher("Radosław", "Klimek"),
+          new Teacher("Jacek", "Piwowarczyk"),
+          new Teacher("Tomasz", "Szmuc"),
+          new Teacher("Andrzej", "Bielecki"),
+        ],
         type: "P",
         ects: 3,
         summaries: [
@@ -102,28 +133,24 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
             ],
           },
         ],
-      }
-    }, 
-    
-  ]
+      },
+    },
+  ];
+};
+
+export const getPartialSummaries = (): TPartialSummary[] => {
+  return getRandom(getTGradeSummaries().map(i => i.details.partialGrades).filter(i => !!i.length));
 }
 export const generateTGradeSummaryDetails = (): TGradeSummaryDetails => {
   return generateTGradeSummary().details;
 };
 
 export const generateTGradeSummary = (): TGradeSummary => {
-  const items = getTGradeSummaries();
-  const ind = Math.floor(Math.random() * 1000 % items.length)
-  return items[ind];
+  return getRandom(getTGradeSummaries());
 };
 
 export const generatePartialSummary = (): TPartialSummary => {
-  return {
-    grade: (Math.random() > 0.5 ? 4.5 : 2.0 )as TGrade,
-    timestamp: randomDate() as TTimestamp,
-    description: Math.random() > 0.5 ? "Bardzo dobrze rozwiązane, brak założeń." : undefined,
-    title: "Kolokwium nr 1 - webpack"
-  }
-}
+  return getRandom(getPartialSummaries());
+};
 
 const randomDate = () => Date.now() - Math.random() * 1000000 + 1000000;
