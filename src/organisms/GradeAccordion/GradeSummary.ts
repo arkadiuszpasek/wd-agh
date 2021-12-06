@@ -5,21 +5,20 @@ export interface TTimedGrade {
   timestamp: TTimestamp;
 }
 export interface TGradeLessonsSummary {
-  lessonType: string;
+  lessonType: "A" | "L" | "W" | "P";
   lengthHours: number;
   group: string;
   grades?: TTimedGrade[];
 }
 export interface TGradeSummaryDetails {
-  grade?: TGrade;
+  grade?: TTimedGrade;
   teachers: Teacher[];
-  type: string;
+  type: "P" | "R" | "E";
   ects: number;
   summaries: TGradeLessonsSummary[];
 }
 
 export interface TGradeSummary {
-  grade?: TGrade;
   mainTeacher: Teacher;
   name: string;
   details: TGradeSummaryDetails;

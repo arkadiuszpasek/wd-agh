@@ -12,7 +12,6 @@ import { GradeSummary } from "../../molecules/GradeSummary/GradeSummary";
 import { TGradeSummary } from "./GradeSummary";
 
 export const GradeAccordion = ({
-  grade,
   mainTeacher,
   name,
   details,
@@ -27,9 +26,6 @@ export const GradeAccordion = ({
         <Typography variant="overline">{name}</Typography>
         <Typography variant="overline" color="text.disabled">
           {mainTeacher.displayName}
-        </Typography>
-        <Typography variant="overline" color="text.primary">
-          <L10n id="grade.seePartials" />
         </Typography>
       </Stack>
     </AccordionSummary>

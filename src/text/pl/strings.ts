@@ -9,9 +9,16 @@ export const strings = {
   "grade.grade": "Ocena",
   "grade.teacher": "Prowadzący",
   "grade.lessonType": "Forma zajęć",
+  "grade.lessonType.aud": "Ćwiczenia audytoryjne",
+  "grade.lessonType.labs": "Ćwiczenia laboratoryjne",
+  "grade.lessonType.proj": "Ćwiczenia projektowe",
+  "grade.lessonType.lectures": "Wykład",
   "grade.group": "Grupa",
   "grade.term": "Termin",
   "grade.type": "Typ przedmiotu",
+  "grade.type.p": "Obowiązkowy",
+  "grade.type.r": "Różnice programowe",
+  "grade.type.e": "Obieralny",
   "grade.length": "Liczba godzin",
   "grade.ects": "ECTS",
   "grade.finalGrade": "Ocena końcowa",
@@ -21,4 +28,6 @@ export const strings = {
   "gradePage.accumulatedEcts": "Zebrane punkty ECTS",
   "gradePage.avgPerYear": "Średnia ważona za rok",
   "gradePage.avgPerSemester": "Średnia ważona za semestr",
+  "gradePage.summary": "Podsumowanie",
+  "gradePage.subjects": "Przedmioty"
 };
