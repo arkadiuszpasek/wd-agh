@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import React from "react";
 import { LoginInputs } from "../../molecules/LoginInputs/LoginInputs";
 import { L10n } from "../../models/intl/L10n/L10n";
-import { Container, Paper, Typography } from "@mui/material";
+import { Button, Container, Link, Paper, Stack, Typography } from "@mui/material";
 
 const Wrapper = styled("div")(({ theme }) => ({
   maxWidth: "90%",
@@ -20,23 +20,17 @@ const sxBox: React.CSSProperties = {
 };
 export const LoginDialog = () => {
   return (
-    <Container maxWidth="sm">
-      <Paper sx={{ padding: "10px " }}>
-        <Box display="flex" flexDirection="column">
-          <Typography variant="h1">
-            <L10n id="login" />
-          </Typography>
-          <Box display="flex">
-            <Box sx={{ ...sxBox, bgcolor: "primary.main" }}>
-              <L10n id="student" />
-            </Box>
-            <Box sx={{ ...sxBox, bgcolor: "secondary.main" }}>
-              <L10n id="teacher" />
-            </Box>
-          </Box>
-          <LoginInputs />
-        </Box>
-      </Paper>
-    </Container>
+    <Stack spacing={2}>
+      <Typography variant="h5">
+        <L10n id="login" />
+      </Typography>
+      <LoginInputs />
+      <Button variant="contained" sx={{ backgroundColor: "primary.main" }}>
+        <L10n id="login.logIn" />
+      </Button>
+      <Link component="button" alignSelf="flex-start" onClick={() => null} variant="overline" color="text.primary">
+        <L10n id="login.forgot" />
+      </Link>
+    </Stack>
   );
 };

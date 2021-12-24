@@ -3,8 +3,12 @@ export const strings = {
   student: "Student",
   teacher: "Dydaktyk",
   login: "Logowanie",
+  "login.id": "Identyfikator",
+  "login.password": "Hasło",
+  "login.logIn": "Zaloguj",
+  "login.forgot": "Zapomniałem hasła",
+
   "login.button": "Zaloguj",
-  forgotPassword: "Nie pamiętam hasła",
 
   "grade.grade": "Ocena",
   "grade.teacher": "Prowadzący",
