@@ -1,4 +1,11 @@
-import { Box, Divider, Link, Stack, Breadcrumbs, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Link,
+  Stack,
+  Breadcrumbs,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import { FormattedDate } from "react-intl";
 import { L10n } from "../../models/intl/L10n/L10n";
@@ -9,7 +16,7 @@ import {
 } from "../../organisms/GradeAccordion/GradeSummary";
 import { PartialSummaryList } from "../../organisms/PartialSummaryList/PartialSummaryList";
 
-export const GradeSummary = ({ name, details}: TGradeSummary) => {
+export const GradeSummary = ({ name, details }: TGradeSummary) => {
   const [isDisplayingPartials, setIsDisplayingPartials] = useState(false);
   const getTypeText = () => {
     switch (details.type) {
@@ -57,7 +64,13 @@ export const GradeSummary = ({ name, details}: TGradeSummary) => {
   };
   const renderSummary = () => (
     <Stack divider={<Divider />} spacing={1}>
-      <Link component="button" alignSelf="flex-start" onClick={() => setIsDisplayingPartials(true)} variant="overline" color="text.primary">
+      <Link
+        component="button"
+        alignSelf="flex-start"
+        onClick={() => setIsDisplayingPartials(true)}
+        variant="overline"
+        color="text.primary"
+      >
         <L10n id="grade.seePartials" />
       </Link>
       <Stack>
@@ -178,14 +191,20 @@ export const GradeSummary = ({ name, details}: TGradeSummary) => {
   const renderPartials = () => (
     <Box>
       <Breadcrumbs aria-label="breadcrumb">
-        <Link color="text.disabled" component="button" onClick={() => setIsDisplayingPartials(false)}>
+        <Link
+          color="text.disabled"
+          component="button"
+          onClick={() => setIsDisplayingPartials(false)}
+        >
           <Typography>{name}</Typography>
         </Link>
-        <Typography color="text.primary"><L10n id="grade.partials" /></Typography>
+        <Typography color="text.primary">
+          <L10n id="grade.partials" />
+        </Typography>
       </Breadcrumbs>
       <PartialSummaryList summaries={details.partialGrades} />
     </Box>
-  )
+  );
 
   return isDisplayingPartials ? renderPartials() : renderSummary();
 };

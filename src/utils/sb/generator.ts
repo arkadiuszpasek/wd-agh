@@ -10,7 +10,7 @@ export const getRandom = <T extends unknown>(items: T[]) => {
   const ind = Math.floor((Math.random() * 1000) % items.length);
 
   return items[ind];
-}
+};
 
 export const getTGradeSummaries = (): TGradeSummary[] => {
   return [
@@ -84,12 +84,22 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
       mainTeacher: new Teacher("Adam", "Sędziwy"),
       details: {
         partialGrades: [
-          {grade: 4 as TGrade, timestamp: randomDate() as TTimestamp,
-          title: "Prezentacja nr 3"},
-          {grade: 3.5 as TGrade, timestamp: randomDate() as TTimestamp,
-          description: "Dobrze zaprezentowana, błędy merytoryczne", title: "Prezentacja nr 2"},
-          {grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp,
-          title: "Prezentacja nr 1"},
+          {
+            grade: 4 as TGrade,
+            timestamp: randomDate() as TTimestamp,
+            title: "Prezentacja nr 3",
+          },
+          {
+            grade: 3.5 as TGrade,
+            timestamp: randomDate() as TTimestamp,
+            description: "Dobrze zaprezentowana, błędy merytoryczne",
+            title: "Prezentacja nr 2",
+          },
+          {
+            grade: 4.5 as TGrade,
+            timestamp: randomDate() as TTimestamp,
+            title: "Prezentacja nr 1",
+          },
         ],
         grade: { grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp },
         teachers: [new Teacher("Adam", "Sędziwy")],
@@ -139,8 +149,12 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
 };
 
 export const getPartialSummaries = (): TPartialSummary[] => {
-  return getRandom(getTGradeSummaries().map(i => i.details.partialGrades).filter(i => !!i.length));
-}
+  return getRandom(
+    getTGradeSummaries()
+      .map((i) => i.details.partialGrades)
+      .filter((i) => !!i.length)
+  );
+};
 export const generateTGradeSummaryDetails = (): TGradeSummaryDetails => {
   return generateTGradeSummary().details;
 };

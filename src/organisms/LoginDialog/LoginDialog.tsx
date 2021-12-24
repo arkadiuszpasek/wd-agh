@@ -3,7 +3,14 @@ import { styled } from "@mui/material/styles";
 import React from "react";
 import { LoginInputs } from "../../molecules/LoginInputs/LoginInputs";
 import { L10n } from "../../models/intl/L10n/L10n";
-import { Button, Container, Link, Paper, Stack, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Link,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 const Wrapper = styled("div")(({ theme }) => ({
   maxWidth: "90%",
@@ -28,7 +35,13 @@ export const LoginDialog = () => {
       <Button variant="contained" sx={{ backgroundColor: "primary.main" }}>
         <L10n id="login.logIn" />
       </Button>
-      <Link component="button" alignSelf="flex-start" onClick={() => null} variant="overline" color="text.primary">
+      <Link
+        component="button"
+        alignSelf="flex-start"
+        onClick={() => null}
+        variant="overline"
+        color="text.primary"
+      >
         <L10n id="login.forgot" />
       </Link>
     </Stack>

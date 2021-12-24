@@ -13,6 +13,6 @@ export default {
   component: PartialSummaryList,
 } as ComponentMeta<typeof PartialSummaryList>;
 
-const summaries = getPartialSummaries()
+const summaries = getPartialSummaries();
 export const DefaultSummary: ComponentStory<typeof PartialSummaryList> = () =>
   renderStoryBook(<PartialSummaryList summaries={summaries} />);

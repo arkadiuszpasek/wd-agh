@@ -12,11 +12,7 @@ import { GradeSummary } from "../../molecules/GradeSummary/GradeSummary";
 import { TGradeSummary } from "./GradeSummary";
 
 export const GradeAccordion = (props: TGradeSummary) => {
-  const {
-    mainTeacher,
-    name,
-    details,
-  } = props
+  const { mainTeacher, name, details } = props;
 
   return (
     <Accordion>
@@ -36,6 +32,5 @@ export const GradeAccordion = (props: TGradeSummary) => {
         <GradeSummary {...props} />
       </AccordionDetails>
     </Accordion>
-
-  )
-}
+  );
+};
