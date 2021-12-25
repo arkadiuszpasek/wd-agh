@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { LoginDialog } from "../../organisms/LoginDialog/LoginDialog";
+import { LoginPage } from "./LoginPage/LoginPage";
 
 export const UnauthorizedApp = () => {
   return (
     <Box>
-      <LoginDialog />
+      <LoginPage />
     </Box>
   );
 };

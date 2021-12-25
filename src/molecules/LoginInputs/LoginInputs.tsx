@@ -15,6 +15,7 @@ export const LoginInputs = () => {
         id="login-pwd"
         label={<L10n id="login.password" />}
         variant="outlined"
+        type="password"
       />
     </Stack>
   );
