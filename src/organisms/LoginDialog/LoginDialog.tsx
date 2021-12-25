@@ -1,38 +1,20 @@
-import { Box } from "@mui/system";
-import { styled } from "@mui/material/styles";
-import React from "react";
-import { LoginInputs } from "../../molecules/LoginInputs/LoginInputs";
-import { L10n } from "../../models/intl/L10n/L10n";
 import {
-  Button,
-  Container,
-  Link,
-  Paper,
-  Stack,
-  Typography,
+  Button, Link, Stack, Typography
 } from "@mui/material";
+import React from "react";
+import { L10n } from "../../models/intl/L10n/L10n";
+import { LoginInputs } from "../../molecules/LoginInputs/LoginInputs";
+import { theme } from "../../styles/palette";
 
-const Wrapper = styled("div")(({ theme }) => ({
-  maxWidth: "90%",
-  [theme.breakpoints.up("sm")]: {
-    maxWidth: "60%",
-  },
-  [theme.breakpoints.up("md")]: {
-    maxWidth: "30%",
-  },
-}));
-const sxBox: React.CSSProperties = {
-  // clipPath: 'polygon(20% 0, 80% 0, 100% 100%, 0 100%)',
-  padding: "5px 25px",
-};
 export const LoginDialog = () => {
+  console.log("themeprimar", theme.palette.primary)
   return (
     <Stack spacing={2}>
       <Typography variant="h5">
         <L10n id="login" />
       </Typography>
       <LoginInputs />
-      <Button variant="contained" sx={{ backgroundColor: "primary.main" }}>
+      <Button variant="contained" style={{ backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrastText }}>
         <L10n id="login.logIn" />
       </Button>
       <Link
