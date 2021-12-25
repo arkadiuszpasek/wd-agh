@@ -5,7 +5,7 @@ import { GradePage } from "../../organisms/GradePage/GradePage";
 import { getTGradeSummaries } from "../../utils/sb/generator";
 
 enum State {
-  Grades
+  Grades,
 }
 export const AuthorizedApp = () => {
   const [state, setState] = useState<State>(State.Grades);
@@ -13,10 +13,15 @@ export const AuthorizedApp = () => {
   const renderContent = () => {
     switch (state) {
       case State.Grades:
-        return <GradePage summaries={getTGradeSummaries()}/>;
+        return <GradePage summaries={getTGradeSummaries()} />;
       default:
         return <></>;
     }
-  }
-  return <><Bar />{renderContent()}</>;
+  };
+  return (
+    <>
+      <Bar />
+      {renderContent()}
+    </>
+  );
 };

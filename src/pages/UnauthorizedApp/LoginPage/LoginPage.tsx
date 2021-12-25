@@ -4,7 +4,5 @@ import { LoginPageTemplate } from "./LoginPageTemplate";
 
 export const LoginPage = () => {
   const { setUser } = useUser();
-  return (
-    <LoginPageTemplate onLogIn={(id) => setUser({ id })}/>
-  )
-}
+  return <LoginPageTemplate onLogIn={(id) => setUser({ id })} />;
+};

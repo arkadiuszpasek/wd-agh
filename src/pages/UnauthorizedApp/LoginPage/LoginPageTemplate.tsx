@@ -13,7 +13,7 @@ export const LoginPageTemplate = ({ onLogIn }: Props) => {
 
   return isDownMd ? (
     <Container
-      maxWidth='sm'
+      maxWidth="sm"
       sx={{
         padding: 4,
         display: "flex",
@@ -26,7 +26,11 @@ export const LoginPageTemplate = ({ onLogIn }: Props) => {
   ) : (
     <Grid container sx={{ height: "100%" }}>
       <Grid item md sx={{ width: "50%", overflow: "hidden" }}>
-        <img src={LoginImage} alt="AGH University" style={{ height: "100vh" }} />
+        <img
+          src={LoginImage}
+          alt="AGH University"
+          style={{ height: "100vh" }}
+        />
       </Grid>
       <Grid item md={6}>
         <Container

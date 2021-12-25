@@ -9,7 +9,6 @@ interface Props {
 }
 
 export const LoginDialog = ({ onLogIn }: Props) => {
-
   return (
     <Stack spacing={3}>
       <Typography variant="h5">
@@ -22,7 +21,7 @@ export const LoginDialog = ({ onLogIn }: Props) => {
           backgroundColor: theme.palette.primary.main,
           color: theme.palette.primary.contrastText,
         }}
-        onClick={() => onLogIn('304214', 'aghaghagh')}
+        onClick={() => onLogIn("304214", "aghaghagh")}
       >
         <L10n id="login.logIn" />
       </Button>
