@@ -13,9 +13,21 @@ function App() {
       <Routes>
         <Route
           path="university"
-          element={<AuthorizedApp state={State.Grades} />}
+          element={<AuthorizedApp state={State.University} />}
         />
-        ;
+        <Route
+          path="profile"
+          element={<AuthorizedApp state={State.Profile} />}
+        />
+        <Route
+          path="contact"
+          element={<AuthorizedApp state={State.Contact} />}
+        />
+        <Route
+          path="calendar"
+          element={<AuthorizedApp state={State.Calendar} />}
+        />
+        <Route path="news" element={<AuthorizedApp state={State.News} />} />
         <Route path="/" element={<AuthorizedApp state={State.Pristine} />} />
       </Routes>
     );

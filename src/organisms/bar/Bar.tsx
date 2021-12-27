@@ -11,6 +11,7 @@ import {
 import {
   AppBar,
   Box,
+  Button,
   Divider,
   Drawer,
   IconButton,
@@ -114,17 +115,19 @@ export const Bar = () => {
             >
               <Menu />
             </IconButton>
-            <Typography
-              variant="h6"
-              component="p"
-              sx={{
-                display: "flex",
-                flexGrow: 1,
-                justifyContent: "flex-start",
-              }}
-            >
-              <L10n id="virtual-university" />
-            </Typography>
+            <Link to="/">
+              <Typography
+                variant="h6"
+                component="p"
+                sx={{
+                  display: "flex",
+                  flexGrow: 1,
+                  justifyContent: "flex-start",
+                }}
+              >
+                <L10n id="virtual-university" />
+              </Typography>
+            </Link>
           </Toolbar>
         </AppBar>
       </Box>

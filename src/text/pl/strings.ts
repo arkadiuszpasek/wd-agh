@@ -1,5 +1,5 @@
 export const strings = {
-  "virtual-university": "Writualny Dziekanat",
+  "virtual-university": "Wirtualny Dziekanat",
   student: "Student",
   teacher: "Dydaktyk",
   login: "Logowanie",
@@ -42,4 +42,17 @@ export const strings = {
   "nav.logout": "Wyloguj",
   "nav.news": "Ogłoszenia",
   "nav.contact": "Kontakt",
+
+  "contact.deansOffice": "Dziekanat",
+  "contact.deansOffice.description":
+    "Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej Stacjonarne",
+  "contact.support": "Osługa techniczna",
+  "contact.support.description":
+    "Zastrzeżenia działania wirtualnego dziekanatu",
+
+  seeMore: "Zobacz więcej",
+
+  "news.noNeews": "Brak nowych ogłoszeń",
+
+  "calendar.see": "Zobacz kalendarz",
 };
