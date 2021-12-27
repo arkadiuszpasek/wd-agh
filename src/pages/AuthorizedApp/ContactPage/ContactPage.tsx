@@ -1,20 +1,30 @@
 import {
-  Box,
+  Breadcrumbs,
   Button,
   Card,
   CardActions,
   CardContent,
   Container,
+  Divider,
+  Stack,
   Typography,
 } from "@mui/material";
 import React from "react";
+import { BreadcrumbLink } from "../../../atoms/BreadcrumbLink/BreadcrumbLink";
 import { L10n } from "../../../models/intl/L10n/L10n";
 
 export const ContactPage = () => {
   return (
     <Container maxWidth="md" sx={{ paddingY: 4 }}>
-      <Box display="flex" justifyContent="space-between">
-        <Card sx={{ maxWidth: 345 }}>
+      <Breadcrumbs aria-label="breadcrumb">
+        <BreadcrumbLink to="/" text="Home" />
+        <Typography color="text.primary">
+          <L10n id="nav.contact" />
+        </Typography>
+      </Breadcrumbs>
+      <Divider sx={{ marginBottom: 4, marginTop: 2 }} />
+      <Stack spacing={2}>
+        <Card>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               <L10n id="contact.deansOffice" />
@@ -38,7 +48,7 @@ export const ContactPage = () => {
             </a>
           </CardActions>
         </Card>
-        <Card sx={{ maxWidth: 345 }}>
+        <Card>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               <L10n id="contact.support" />
@@ -62,7 +72,7 @@ export const ContactPage = () => {
             </a>
           </CardActions>
         </Card>
-      </Box>
+      </Stack>{" "}
     </Container>
   );
 };

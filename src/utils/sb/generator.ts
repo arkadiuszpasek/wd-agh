@@ -15,6 +15,7 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
   return [
     {
       name: "Aspekty prawne i organizacja przedsiębiorstwa",
+      shortName: "APIOP",
       mainTeacher: new Teacher("Marta", "Kraszewska"),
       details: {
         partialGrades: [],
@@ -46,6 +47,7 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
 
     {
       name: "Hurtownie danych",
+      shortName: "HD",
       mainTeacher: new Teacher("Leszek", "Kotulski"),
       details: {
         partialGrades: [],
@@ -80,6 +82,7 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
 
     {
       name: "Pracownia inżynierska dyplomowa",
+      shortName: "PID",
       mainTeacher: new Teacher("Adam", "Sędziwy"),
       details: {
         partialGrades: [
@@ -90,13 +93,13 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
           },
           {
             grade: 3.5 as TGrade,
-            timestamp: randomDate() as TTimestamp,
+            timestamp: (randomDate() - 1000000000) as TTimestamp,
             description: "Dobrze zaprezentowana, błędy merytoryczne",
             title: "Prezentacja nr 2",
           },
           {
             grade: 4.5 as TGrade,
-            timestamp: randomDate() as TTimestamp,
+            timestamp: (randomDate() - 4000000000) as TTimestamp,
             title: "Prezentacja nr 1",
           },
         ],
@@ -119,6 +122,7 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
 
     {
       name: "Studio projektowe 2",
+      shortName: "SP2",
       mainTeacher: new Teacher("Tomasz", "Szmuc"),
       details: {
         partialGrades: [],

@@ -23,5 +23,6 @@ export interface TGradeSummaryDetails {
 export interface TGradeSummary {
   mainTeacher: Teacher;
   name: string;
+  shortName: string;
   details: TGradeSummaryDetails;
 }

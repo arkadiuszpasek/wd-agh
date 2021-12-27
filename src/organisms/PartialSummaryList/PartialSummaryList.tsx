@@ -39,9 +39,9 @@ export const PartialSummaryList = ({ summaries }: Props) => {
             }
           ></StepLabel>
           <StepContent>
-            <Typography variant="subtitle2">{summary.title}</Typography>
+            <Typography variant="h6">{summary.title}</Typography>
             {summary.description && (
-              <Typography>{summary.description}</Typography>
+              <Typography variant="body2">{summary.description}</Typography>
             )}
           </StepContent>
         </Step>

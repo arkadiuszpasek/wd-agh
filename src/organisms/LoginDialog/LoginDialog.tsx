@@ -1,4 +1,3 @@
-import { ChevronRight } from "@mui/icons-material";
 import { Button, Link, Stack, Typography } from "@mui/material";
 import React from "react";
 import { L10n } from "../../models/intl/L10n/L10n";
@@ -25,11 +24,9 @@ export const LoginDialog = ({ onLogIn }: Props) => {
             color: theme.palette.primary.contrastText,
           }}
           onClick={() => onLogIn("304214", "aghaghagh")}
+          size="large"
         >
-          <Stack direction="row">
-            <L10n id="login.logIn" />
-            <ChevronRight />
-          </Stack>
+          <L10n id="login.logIn" />
         </Button>
         <Link
           component="button"

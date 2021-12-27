@@ -16,9 +16,9 @@ import { useUser } from "../../models/user";
 export const NavMenuGrid = () => {
   const { setUser } = useUser();
   return (
-    <Grid container spacing={{ xs: 2, md: 3 }} p={2}>
+    <Grid container spacing={{ xs: 2, md: 3 }} py={2}>
       <Grid item xs={6}>
-        <Link to="/university">
+        <Link to="/university/grades">
           <NavMenuItem
             text={<L10n id="nav.university" />}
             Icon={<School fontSize="large" />}

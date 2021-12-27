@@ -1,14 +1,17 @@
 import React from "react";
 import { Bar } from "../../organisms/bar/Bar";
-import { GradePage } from "../../organisms/GradePage/GradePage";
-import { getTGradeSummaries } from "../../utils/sb/generator";
 import { CalendarPage } from "./CalendarPage/CalendarPage";
 import { ContactPage } from "./ContactPage/ContactPage";
 import { HomePage } from "./HomePage/HomePage";
 import { NewsPage } from "./NewsPage/NewsPage";
+import { UniversityGradeDetailsPage } from "./UniversityGradeDetailsPage/UniversityGradeDetailsPage";
+import { UniversityGradesPage } from "./UniversityGradesPage/UniversityGradesPage";
+import { UniversityMenuPage } from "./UniversityMenuPage/UnivesityMenuPage";
 
 export enum State {
   University,
+  Grades,
+  GradeDetails,
   News,
   Contact,
   Profile,
@@ -22,7 +25,11 @@ export const AuthorizedApp = ({ state }: Props) => {
   const renderContent = () => {
     switch (state) {
       case State.University:
-        return <GradePage summaries={getTGradeSummaries()} />;
+        return <UniversityMenuPage />;
+      case State.Grades:
+        return <UniversityGradesPage />;
+      case State.GradeDetails:
+        return <UniversityGradeDetailsPage />;
       case State.Contact:
         return <ContactPage />;
       case State.News:

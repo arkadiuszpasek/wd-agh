@@ -1,23 +1,15 @@
-import {
-  Box,
-  Divider,
-  Link,
-  Stack,
-  Breadcrumbs,
-  Typography,
-} from "@mui/material";
-import React, { useState } from "react";
+import { Box, Divider, Stack, Typography } from "@mui/material";
+import React from "react";
 import { FormattedDate } from "react-intl";
+import { Link } from "react-router-dom";
 import { L10n } from "../../models/intl/L10n/L10n";
 import {
   TGradeSummary,
   TGradeSummaryDetails,
   TTimedGrade,
 } from "../../organisms/GradeAccordion/GradeSummary";
-import { PartialSummaryList } from "../../organisms/PartialSummaryList/PartialSummaryList";
 
-export const GradeSummary = ({ name, details }: TGradeSummary) => {
-  const [isDisplayingPartials, setIsDisplayingPartials] = useState(false);
+export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
   const getTypeText = () => {
     switch (details.type) {
       case "E":
@@ -64,14 +56,14 @@ export const GradeSummary = ({ name, details }: TGradeSummary) => {
   };
   const renderSummary = () => (
     <Stack divider={<Divider />} spacing={1}>
-      <Link
-        component="button"
-        alignSelf="flex-start"
-        onClick={() => setIsDisplayingPartials(true)}
-        variant="overline"
-        color="text.primary"
-      >
-        <L10n id="grade.seePartials" />
+      <Link to={`/university/grades/${shortName}`}>
+        <Typography
+          sx={{ "&:hover": { textDecoration: "underline" } }}
+          color="text.primary"
+          variant="overline"
+        >
+          <L10n id="grade.seePartials" />
+        </Typography>
       </Link>
       <Stack>
         <Box
@@ -188,23 +180,5 @@ export const GradeSummary = ({ name, details }: TGradeSummary) => {
     </Stack>
   );
 
-  const renderPartials = () => (
-    <Box>
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link
-          color="text.disabled"
-          component="button"
-          onClick={() => setIsDisplayingPartials(false)}
-        >
-          <Typography>{name}</Typography>
-        </Link>
-        <Typography color="text.primary">
-          <L10n id="grade.partials" />
-        </Typography>
-      </Breadcrumbs>
-      <PartialSummaryList summaries={details.partialGrades} />
-    </Box>
-  );
-
-  return isDisplayingPartials ? renderPartials() : renderSummary();
+  return renderSummary();
 };

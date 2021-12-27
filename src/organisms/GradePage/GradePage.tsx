@@ -1,4 +1,4 @@
-import { Container, Divider, Stack, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 import React from "react";
 import { L10n } from "../../models/intl/L10n/L10n";
 import { GradeAccordion } from "../GradeAccordion/GradeAccordion";
@@ -40,7 +40,7 @@ export const GradePage = ({ summaries }: Props) => {
   const avg = calculateAvg();
 
   return (
-    <Container maxWidth="md" sx={{ paddingY: 2 }}>
+    <>
       <Typography variant="h4">
         <L10n id="gradePage.summary" />
       </Typography>
@@ -67,6 +67,6 @@ export const GradePage = ({ summaries }: Props) => {
           <GradeAccordion key={s.name} {...s} />
         ))}
       </Stack>
-    </Container>
+    </>
   );
 };

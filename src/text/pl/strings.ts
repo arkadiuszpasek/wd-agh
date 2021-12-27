@@ -29,6 +29,7 @@ export const strings = {
   "grade.finalGrade.empty": "Brak oceny końcowej",
   "grade.seePartials": "Zobacz oceny cząstkowe",
   "grade.partials": "Oceny cząstkowe",
+  "grade.partials.empty": "Brak ocen cząstkowych",
 
   "gradePage.accumulatedEcts": "Zebrane punkty ECTS",
   "gradePage.avgPerYear": "Średnia ważona za rok",
@@ -42,6 +43,7 @@ export const strings = {
   "nav.logout": "Wyloguj",
   "nav.news": "Ogłoszenia",
   "nav.contact": "Kontakt",
+  "nav.university.grades": "Przedmioty",
 
   "contact.deansOffice": "Dziekanat",
   "contact.deansOffice.description":

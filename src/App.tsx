@@ -16,6 +16,14 @@ function App() {
           element={<AuthorizedApp state={State.University} />}
         />
         <Route
+          path="university/grades"
+          element={<AuthorizedApp state={State.Grades} />}
+        />
+        <Route
+          path="university/grades/:shortName"
+          element={<AuthorizedApp state={State.GradeDetails} />}
+        />
+        <Route
           path="profile"
           element={<AuthorizedApp state={State.Profile} />}
         />
