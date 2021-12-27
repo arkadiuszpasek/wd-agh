@@ -10,5 +10,5 @@ export default {
   component: NavMenuGrid,
 } as ComponentMeta<typeof NavMenuGrid>;
 
-export const DefaultPartialSummary: ComponentStory<typeof NavMenuGrid> =
-  () => renderStoryBook(<NavMenuGrid />);
+export const DefaultPartialSummary: ComponentStory<typeof NavMenuGrid> = () =>
+  renderStoryBook(<NavMenuGrid />);

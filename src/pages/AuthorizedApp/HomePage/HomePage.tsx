@@ -7,5 +7,5 @@ export const HomePage = () => {
     <Container maxWidth="md">
       <NavMenuGrid />
     </Container>
-  )
-}
+  );
+};

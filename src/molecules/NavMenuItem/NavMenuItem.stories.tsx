@@ -10,5 +10,5 @@ export default {
   component: NavMenuItem,
 } as ComponentMeta<typeof NavMenuItem>;
 
-export const DefaultPartialSummary: ComponentStory<typeof NavMenuItem> =
-  () => renderStoryBook(<NavMenuItem text="Kalendarz" Icon={<School />} />);
+export const DefaultPartialSummary: ComponentStory<typeof NavMenuItem> = () =>
+  renderStoryBook(<NavMenuItem text="Kalendarz" Icon={<School />} />);

@@ -41,5 +41,5 @@ export const strings = {
   "nav.profile": "Profil",
   "nav.logout": "Wyloguj",
   "nav.news": "Ogłoszenia",
-  "nav.contact": "Kontakt"
+  "nav.contact": "Kontakt",
 };
