@@ -35,4 +35,11 @@ export const strings = {
   "gradePage.avgPerSemester": "Średnia ważona za semestr",
   "gradePage.summary": "Podsumowanie",
   "gradePage.subjects": "Przedmioty",
+
+  "nav.university": "Twoje studia",
+  "nav.calendar": "Kalendarz",
+  "nav.profile": "Profil",
+  "nav.logout": "Wyloguj",
+  "nav.news": "Ogłoszenia",
+  "nav.contact": "Kontakt"
 };
