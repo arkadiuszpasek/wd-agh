@@ -6,49 +6,64 @@ import {
   School,
   Today,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import { L10n } from "../../models/intl/L10n/L10n";
 import { NavMenuItem } from "../../molecules/NavMenuItem/NavMenuItem";
+import { useUser } from "../../models/user";
 
 export const NavMenuGrid = () => {
+  const { setUser } = useUser();
   return (
     <Grid container spacing={{ xs: 2, md: 3 }} p={2}>
       <Grid item xs={6}>
-        <NavMenuItem
-          text={<L10n id="nav.university" />}
-          Icon={<School fontSize="large" />}
-        />
+        <Link to="/university">
+          <NavMenuItem
+            text={<L10n id="nav.university" />}
+            Icon={<School fontSize="large" />}
+          />
+        </Link>
       </Grid>
       <Grid item xs={6}>
-        <NavMenuItem
-          text={<L10n id="nav.profile" />}
-          Icon={<Person fontSize="large" />}
-        />
+        <Link to="/profile">
+          <NavMenuItem
+            text={<L10n id="nav.profile" />}
+            Icon={<Person fontSize="large" />}
+          />
+        </Link>
       </Grid>
       <Grid item xs={6}>
-        <NavMenuItem
-          text={<L10n id="nav.calendar" />}
-          Icon={<Today fontSize="large" />}
-        />
+        <Link to="/calendar">
+          <NavMenuItem
+            text={<L10n id="nav.calendar" />}
+            Icon={<Today fontSize="large" />}
+          />
+        </Link>
       </Grid>
       <Grid item xs={6}>
-        <NavMenuItem
-          text={<L10n id="nav.news" />}
-          Icon={<Article fontSize="large" />}
-        />
+        <Link to="/news">
+          <NavMenuItem
+            text={<L10n id="nav.news" />}
+            Icon={<Article fontSize="large" />}
+          />
+        </Link>
       </Grid>
       <Grid item xs={6}>
-        <NavMenuItem
-          text={<L10n id="nav.contact" />}
-          Icon={<Dialpad fontSize="large" />}
-        />
+        <Link to="/contact">
+          <NavMenuItem
+            text={<L10n id="nav.contact" />}
+            Icon={<Dialpad fontSize="large" />}
+          />
+        </Link>
       </Grid>
       <Grid item xs={6}>
-        <NavMenuItem
-          text={<L10n id="nav.logout" />}
-          Icon={<Logout fontSize="large" />}
-        />
+        <Box onClick={() => setUser(undefined)}>
+          <NavMenuItem
+            text={<L10n id="nav.logout" />}
+            Icon={<Logout fontSize="large" />}
+          />
+        </Box>
       </Grid>
     </Grid>
   );

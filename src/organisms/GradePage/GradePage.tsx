@@ -1,5 +1,4 @@
 import { Container, Divider, Stack, Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
 import { L10n } from "../../models/intl/L10n/L10n";
 import { GradeAccordion } from "../GradeAccordion/GradeAccordion";

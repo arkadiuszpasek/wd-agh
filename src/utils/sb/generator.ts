@@ -1,8 +1,7 @@
 import { TPartialSummary } from "../../molecules/PartialSummary/TPartialSummary";
 import {
-  TGradeSummaryDetails,
   TGradeSummary,
-  TTimedGrade,
+  TGradeSummaryDetails,
 } from "../../organisms/GradeAccordion/GradeSummary";
 import { Teacher } from "../../types/Teacher";
 

@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { L10nProvider } from "./models/intl/L10n/L10nProvider";
@@ -12,7 +13,9 @@ ReactDOM.render(
     <UserContextProvider>
       <ThemeProvider theme={theme}>
         <L10nProvider>
-          <App />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </L10nProvider>
       </ThemeProvider>
     </UserContextProvider>

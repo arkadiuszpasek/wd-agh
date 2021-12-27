@@ -1,22 +1,12 @@
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Chip,
-  Container,
-  Stack,
   Step,
   StepContent,
   StepLabel,
   Stepper,
   Typography,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import React, { useState } from "react";
-import { TTimedGrade } from "../../organisms/GradeAccordion/GradeSummary";
+import React from "react";
 import { FormattedDate } from "react-intl";
-import { PartialSummary } from "../../molecules/PartialSummary/PartialSummary";
 import { TPartialSummary } from "../../molecules/PartialSummary/TPartialSummary";
 
 interface Props {

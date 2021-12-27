@@ -3,7 +3,7 @@ import { User } from "./User";
 
 export interface Value {
   user: User | undefined;
-  setUser: (user: User) => void;
+  setUser: (user: User | undefined) => void;
 }
 export const UserContext = React.createContext<Value | undefined>(undefined);
 

@@ -10,6 +10,7 @@ export const LoginInputs = () => {
         id="login-id"
         label={<L10n id="login.id" />}
         variant="outlined"
+        onKeyPress={console.log}
       />
       <TextField
         id="login-pwd"

@@ -10,30 +10,33 @@ interface Props {
 
 export const LoginDialog = ({ onLogIn }: Props) => {
   return (
-    <Stack spacing={3}>
-      <Typography variant="h5">
-        <L10n id="login" />
-      </Typography>
-      <LoginInputs />
-      <Button
-        variant="contained"
-        style={{
-          backgroundColor: theme.palette.primary.main,
-          color: theme.palette.primary.contrastText,
-        }}
-        onClick={() => onLogIn("304214", "aghaghagh")}
-      >
-        <L10n id="login.logIn" />
-      </Button>
-      <Link
-        component="button"
-        alignSelf="flex-start"
-        onClick={() => null}
-        variant="overline"
-        color="text.primary"
-      >
-        <L10n id="login.forgot" />
-      </Link>
-    </Stack>
+    <form onSubmit={() => onLogIn("3", "3")}>
+      <Stack spacing={3}>
+        <Typography variant="h5">
+          <L10n id="login" />
+        </Typography>
+        <LoginInputs />
+        <Button
+          type="submit"
+          variant="contained"
+          style={{
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText,
+          }}
+          onClick={() => onLogIn("304214", "aghaghagh")}
+        >
+          <L10n id="login.logIn" />
+        </Button>
+        <Link
+          component="button"
+          alignSelf="flex-start"
+          onClick={() => null}
+          variant="overline"
+          color="text.primary"
+        >
+          <L10n id="login.forgot" />
+        </Link>
+      </Stack>
+    </form>
   );
 };

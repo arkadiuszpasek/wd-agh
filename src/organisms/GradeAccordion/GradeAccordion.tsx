@@ -7,12 +7,11 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { L10n } from "../../models/intl/L10n/L10n";
 import { GradeSummary } from "../../molecules/GradeSummary/GradeSummary";
 import { TGradeSummary } from "./GradeSummary";
 
 export const GradeAccordion = (props: TGradeSummary) => {
-  const { mainTeacher, name, details } = props;
+  const { mainTeacher, name } = props;
 
   return (
     <Accordion>
