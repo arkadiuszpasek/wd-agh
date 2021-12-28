@@ -21,3 +21,13 @@ export const L10nProvider = ({ children }: React.PropsWithChildren<{}>) => {
     </L10nContext.Provider>
   );
 };
+
+export const useL10n = (): L10nContextValue => {
+  const context = React.useContext(L10nContext);
+
+  if (!context) {
+    throw Error("L10nContext must be used withing L10nProvider");
+  }
+
+  return context;
+};

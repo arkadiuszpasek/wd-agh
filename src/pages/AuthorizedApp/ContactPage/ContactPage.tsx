@@ -15,7 +15,7 @@ import { L10n } from "../../../models/intl/L10n/L10n";
 
 export const ContactPage = () => {
   return (
-    <Container maxWidth="md" sx={{ paddingY: 4 }}>
+    <Container disableGutters maxWidth="md" sx={{ paddingY: 4 }}>
       <Breadcrumbs aria-label="breadcrumb">
         <BreadcrumbLink to="/" text="Home" />
         <Typography color="text.primary">
@@ -72,7 +72,7 @@ export const ContactPage = () => {
             </a>
           </CardActions>
         </Card>
-      </Stack>{" "}
+      </Stack>
     </Container>
   );
 };

@@ -1,4 +1,7 @@
 export const strings = {
+  "intl.switch.english": "Switch to english 🇬🇧",
+  "intl.switch.polish": "Przełącz na język polski 🇵🇱",
+
   "virtual-university": "Wirtualny Dziekanat",
   student: "Student",
   teacher: "Dydaktyk",

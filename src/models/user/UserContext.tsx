@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TheUser, User } from "./User";
+import { User } from "./User";
 
 export interface Value {
   user: User | undefined;
@@ -10,7 +10,7 @@ export const UserContext = React.createContext<Value | undefined>(undefined);
 export const UserContextProvider = ({
   children,
 }: React.PropsWithChildren<{}>) => {
-  const [user, setUser] = useState<User | undefined>(TheUser);
+  const [user, setUser] = useState<User | undefined>();
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
