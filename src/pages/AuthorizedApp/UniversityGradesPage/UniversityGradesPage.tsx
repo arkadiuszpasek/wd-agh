@@ -29,11 +29,7 @@ export const UniversityGradesPage = () => {
       <Divider sx={{ marginBottom: 4, marginTop: 2 }} />
       <GradePage summaries={getTGradeSummaries()} />
       <Box display="flex" width="100%" justifyContent="center" my={4}>
-        <Pagination
-          count={7}
-          page={page}
-          onChange={handleChange}
-        />
+        <Pagination count={7} page={page} onChange={handleChange} />
       </Box>
     </Container>
   );
