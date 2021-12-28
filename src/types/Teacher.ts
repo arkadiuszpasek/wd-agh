@@ -1,7 +1,7 @@
 export class Teacher {
-  constructor(public readonly name: string, public readonly surname: string) {}
+  constructor(public readonly name: string, public readonly surname: string, public readonly title: string) {}
 
   get displayName(): string {
-    return `${this.name} ${this.surname}`;
+    return `${this.title} ${this.name} ${this.surname}`;
   }
 }

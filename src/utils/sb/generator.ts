@@ -16,11 +16,11 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
     {
       name: "Aspekty prawne i organizacja przedsiębiorstwa",
       shortName: "APIOP",
-      mainTeacher: new Teacher("Marta", "Kraszewska"),
+      mainTeacher: new Teacher("Marta", "Kraszewska", "dr. inż."),
       details: {
         partialGrades: [],
         grade: { grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp },
-        teachers: [new Teacher("Marta", "Kraszewska")],
+        teachers: [new Teacher("Marta", "Kraszewska", "dr. inż.")],
         type: "P",
         ects: 2,
         summaries: [
@@ -48,14 +48,14 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
     {
       name: "Hurtownie danych",
       shortName: "HD",
-      mainTeacher: new Teacher("Leszek", "Kotulski"),
+      mainTeacher: new Teacher("Leszek", "Kotulski", "prof. dr hab. inż."),
       details: {
         partialGrades: [],
         grade: { grade: 3 as TGrade, timestamp: randomDate() as TTimestamp },
         teachers: [
-          new Teacher("Leszek", "Kotulski"),
-          new Teacher("Adam", "Sędziwy"),
-          new Teacher("Artur", "Basiura"),
+          new Teacher("Leszek", "Kotulski", "prof. dr hab. inż."),
+          new Teacher("Adam", "Sędziwy", "dr hab."),
+          new Teacher("Artur", "Basiura", "dr. inż."),
         ],
         type: "E",
         ects: 3,
@@ -83,7 +83,7 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
     {
       name: "Pracownia inżynierska dyplomowa",
       shortName: "PID",
-      mainTeacher: new Teacher("Adam", "Sędziwy"),
+      mainTeacher: new Teacher("Adam", "Sędziwy", "dr hab."),
       details: {
         partialGrades: [
           {
@@ -104,7 +104,7 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
           },
         ],
         grade: { grade: 4.5 as TGrade, timestamp: randomDate() as TTimestamp },
-        teachers: [new Teacher("Adam", "Sędziwy")],
+        teachers: [new Teacher("Adam", "Sędziwy", "dr hab.")],
         type: "P",
         ects: 1,
         summaries: [
@@ -123,16 +123,16 @@ export const getTGradeSummaries = (): TGradeSummary[] => {
     {
       name: "Studio projektowe 2",
       shortName: "SP2",
-      mainTeacher: new Teacher("Tomasz", "Szmuc"),
+      mainTeacher: new Teacher("Tomasz", "Szmuc", "dr hab. inż."),
       details: {
         partialGrades: [],
         grade: { grade: 4 as TGrade, timestamp: randomDate() as TTimestamp },
         teachers: [
-          new Teacher("Tomasz", "Szmuc"),
-          new Teacher("Radosław", "Klimek"),
-          new Teacher("Jacek", "Piwowarczyk"),
-          new Teacher("Tomasz", "Szmuc"),
-          new Teacher("Andrzej", "Bielecki"),
+          new Teacher("Tomasz", "Szmuc", "dr hab. inż."),
+          new Teacher("Radosław", "Klimek", "dr hab. inż."),
+          new Teacher("Jacek", "Piwowarczyk", "dr. inż."),
+          new Teacher("Tomasz", "Szmuc", "dr hab. inż."),
+          new Teacher("Andrzej", "Bielecki", "dr hab."),
         ],
         type: "P",
         ects: 3,

@@ -30,7 +30,6 @@ export const UniversityGradesPage = () => {
       <GradePage summaries={getTGradeSummaries()} />
       <Box display="flex" width="100%" justifyContent="center" my={4}>
         <Pagination
-          size="large"
           count={7}
           page={page}
           onChange={handleChange}
