@@ -14,7 +14,7 @@ export interface TGradeLessonsSummary {
 export interface TGradeSummaryDetails {
   grade?: TTimedGrade;
   teachers: Teacher[];
-  type: "P" | "R" | "E";
+  type: "P" | "R" | "E" | "D" | "PP" | "I";
   ects: number;
   summaries: TGradeLessonsSummary[];
   partialGrades: TPartialSummary[];

@@ -44,6 +44,12 @@ export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
         return <L10n id="grade.type.e" />;
       case "R":
         return <L10n id="grade.type.r" />;
+      case "D":
+        return <L10n id="grade.type.d" />;
+      case "PP":
+        return <L10n id="grade.type.pp" />;
+      case "I":
+        return <L10n id="grade.type.i" />;
       default:
         return <L10n id="grade.type.p" />;
     }
