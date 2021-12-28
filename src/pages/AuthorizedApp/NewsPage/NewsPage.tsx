@@ -29,7 +29,7 @@ export const NewsPage = () => {
           rel="noreferrer"
         >
           <Link component="button" variant="overline" color="text.primary">
-            <L10n id="seeMore" />
+            <L10n id="see.news" />
           </Link>
         </a>
       </Stack>

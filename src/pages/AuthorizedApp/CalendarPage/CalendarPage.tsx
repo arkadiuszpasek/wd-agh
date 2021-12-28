@@ -24,7 +24,7 @@ export const CalendarPage = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <Button variant="outlined" size="large">
+        <Button>
           <L10n id="calendar.see" />
         </Button>
       </a>

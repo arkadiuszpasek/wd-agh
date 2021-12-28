@@ -1,4 +1,10 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Stack,
+  Typography,
+  Link as MuiLink,
+} from "@mui/material";
 import React from "react";
 import { FormattedDate } from "react-intl";
 import { Link } from "react-router-dom";
@@ -8,6 +14,28 @@ import {
   TGradeSummaryDetails,
   TTimedGrade,
 } from "../../organisms/GradeAccordion/GradeSummary";
+
+export const SummaryLabelTypography = ({
+  children,
+}: React.PropsWithChildren<{}>) => {
+  return (
+    <Typography
+      variant="body2"
+      sx={{ textTransform: "uppercase", marginBottom: 1 }}
+    >
+      {children}
+    </Typography>
+  );
+};
+export const SummaryContentTypography = ({
+  children,
+}: React.PropsWithChildren<{}>) => {
+  return (
+    <Typography variant="body2" sx={{ marginBottom: 1 }}>
+      {children}
+    </Typography>
+  );
+};
 
 export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
   const getTypeText = () => {
@@ -40,14 +68,14 @@ export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
         <Typography
           color={isFirst ? undefined : "text.disabled"}
           lineHeight={isFirst ? 1.5 : 1.2}
-          variant="overline"
+          variant="body2"
         >
           {timedGrade.grade.toFixed(1)}
         </Typography>
         <Typography
           color={isFirst ? undefined : "text.disabled"}
           lineHeight={isFirst ? 1.5 : 1.2}
-          variant="overline"
+          variant="body2"
         >
           <FormattedDate value={timedGrade.timestamp} />
         </Typography>
@@ -57,13 +85,15 @@ export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
   const renderSummary = () => (
     <Stack divider={<Divider />} spacing={1}>
       <Link to={`/university/grades/${shortName}`}>
-        <Typography
-          sx={{ "&:hover": { textDecoration: "underline" } }}
-          color="text.primary"
+        <MuiLink
+          component="button"
+          alignSelf="flex-start"
+          onClick={() => null}
           variant="overline"
+          color="primary.main"
         >
           <L10n id="grade.seePartials" />
-        </Typography>
+        </MuiLink>
       </Link>
       <Stack>
         <Box
@@ -71,36 +101,36 @@ export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
           justifyContent="space-between"
           alignItems="flex-start"
         >
-          <Typography variant="overline">
+          <SummaryLabelTypography>
             <L10n id="grade.ects" />
-          </Typography>
-          <Typography variant="overline">{details.ects}</Typography>
+          </SummaryLabelTypography>
+          <SummaryContentTypography>{details.ects}</SummaryContentTypography>
         </Box>
         <Box
           display="flex"
           justifyContent="space-between"
           alignItems="flex-start"
         >
-          <Typography variant="overline">
+          <SummaryLabelTypography>
             <L10n id="grade.type" />
-          </Typography>
-          <Typography variant="overline">{getTypeText()}</Typography>
+          </SummaryLabelTypography>
+          <SummaryContentTypography>{getTypeText()}</SummaryContentTypography>
         </Box>
         <Box
           display="flex"
           justifyContent="space-between"
           alignItems="flex-start"
         >
-          <Typography variant="overline">
+          <SummaryLabelTypography>
             <L10n id="grade.finalGrade" />
-          </Typography>
-          <Typography variant="overline">
+          </SummaryLabelTypography>
+          <SummaryContentTypography>
             {details.grade ? (
               renderTimedGrade(details.grade, true)
             ) : (
               <L10n id="grade.finalGrade.empty" />
             )}
-          </Typography>
+          </SummaryContentTypography>
         </Box>
       </Stack>
 
@@ -111,32 +141,34 @@ export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
             justifyContent="space-between"
             alignItems="flex-start"
           >
-            <Typography variant="overline">
+            <SummaryLabelTypography>
               <L10n id="grade.lessonType" />
-            </Typography>
-            <Typography variant="overline">
+            </SummaryLabelTypography>
+            <SummaryContentTypography>
               {getLessonTypeText(summary.lessonType)}
-            </Typography>
+            </SummaryContentTypography>
           </Box>
           <Box
             display="flex"
             justifyContent="space-between"
             alignItems="flex-start"
           >
-            <Typography variant="overline">
+            <SummaryLabelTypography>
               <L10n id="grade.length" />
-            </Typography>
-            <Typography variant="overline">{summary.lengthHours}</Typography>
+            </SummaryLabelTypography>
+            <SummaryContentTypography>
+              {summary.lengthHours}
+            </SummaryContentTypography>
           </Box>
           <Box
             display="flex"
             justifyContent="space-between"
             alignItems="flex-start"
           >
-            <Typography variant="overline">
+            <SummaryLabelTypography>
               <L10n id="grade.group" />
-            </Typography>
-            <Typography variant="overline">{summary.group}</Typography>
+            </SummaryLabelTypography>
+            <SummaryContentTypography>{summary.group}</SummaryContentTypography>
           </Box>
           {summary.grades && !!summary.grades.length && (
             <Box
@@ -144,9 +176,9 @@ export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
               justifyContent="space-between"
               alignItems="flex-start"
             >
-              <Typography variant="overline">
+              <SummaryLabelTypography>
                 <L10n id="grade.grade" />
-              </Typography>
+              </SummaryLabelTypography>
               <Stack spacing={0.5} mt={0.5}>
                 {summary.grades.map((grade, i) =>
                   renderTimedGrade(grade, i === 0)
@@ -162,18 +194,18 @@ export const GradeSummary = ({ name, shortName, details }: TGradeSummary) => {
         justifyContent="space-between"
         alignItems="flex-start"
       >
-        <Typography variant="overline">
+        <SummaryLabelTypography>
           <L10n id="grade.teacher" />
-        </Typography>
+        </SummaryLabelTypography>
         <Stack alignItems="flex-end" mt={0.5}>
           {details.teachers.map((teacher) => (
-            <Typography
+            <SummaryContentTypography
               key={teacher.displayName}
-              variant="overline"
-              lineHeight={1.5}
+              // variant="overline"
+              // lineHeight={1.5}
             >
               {teacher.displayName}
-            </Typography>
+            </SummaryContentTypography>
           ))}
         </Stack>
       </Box>

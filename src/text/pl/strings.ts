@@ -3,7 +3,7 @@ export const strings = {
   student: "Student",
   teacher: "Dydaktyk",
   login: "Logowanie",
-  "login.id": "Identyfikator",
+  "login.id": "Nr indeksu",
   "login.password": "Hasło",
   "login.logIn": "Zaloguj",
   "login.forgot": "Zapomniałem hasła",
@@ -52,9 +52,34 @@ export const strings = {
   "contact.support.description":
     "Zastrzeżenia działania wirtualnego dziekanatu",
 
-  seeMore: "Zobacz więcej",
+  "see.news": "Zobacz więcej aktualności",
+  "see.deansOffice": "Przejdź to strony dziekanatu",
+  "see.vu": "Przejdź do strony CRI",
+  change: "Zmień",
+  "change.password": "Zmień hasło",
 
   "news.noNeews": "Brak nowych ogłoszeń",
 
   "calendar.see": "Zobacz kalendarz",
+
+  "profile.personalData": "Dane osobowe",
+  "profile.financialData": "Dane finansowe",
+  "profile.loginData": "Dane logowania",
+  "profile.agreements": "Zgody",
+  "profile.id": "Nr indeksu",
+  "profile.phone": "Telefon",
+  "profile.email": "Email",
+  "profile.address": "Adres stały",
+  "profile.postAddress": "Adres do korespondencji",
+  "profile.bornPlace": "Miejsce urodzenia",
+  "profile.bornTime": "Data urodzenia",
+  "profile.motherName": "Imię matki",
+  "profile.fatherName": "Imię ojca",
+  "profile.pesel": "PESEL",
+  "profile.nationalId": "Dokument tożsamości",
+  "profile.accountNumber": "Nr konta",
+  "profile.agreement.email": "Zgoda na udostępnianie adresu e-mail",
+  "profile.agreement.parents": "Zgoda na informowanie rodziców",
+  "profile.info":
+    "Student zobowiązany jest niezwłocznie powiadomić Dziekana Wydziału o wszelkich zmianach dotyczących stanu cywilnego, nazwiska lub adresu i o zmianie warunków materialnych, jeżeli wpływają one na przyznanie i wysokość pomocy materialnej",
 };

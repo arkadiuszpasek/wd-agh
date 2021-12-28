@@ -2,7 +2,7 @@ import React from "react";
 import { User } from "./User";
 import { UserContext } from "./UserContext";
 
-export const useLoggerUser = (): User => {
+export const useLoggedUser = (): User => {
   const context = React.useContext(UserContext);
 
   if (!context || !context.user) {

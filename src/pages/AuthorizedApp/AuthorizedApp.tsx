@@ -4,6 +4,7 @@ import { CalendarPage } from "./CalendarPage/CalendarPage";
 import { ContactPage } from "./ContactPage/ContactPage";
 import { HomePage } from "./HomePage/HomePage";
 import { NewsPage } from "./NewsPage/NewsPage";
+import { ProfilePage } from "./ProfilePage/ProfilePage";
 import { UniversityGradeDetailsPage } from "./UniversityGradeDetailsPage/UniversityGradeDetailsPage";
 import { UniversityGradesPage } from "./UniversityGradesPage/UniversityGradesPage";
 import { UniversityMenuPage } from "./UniversityMenuPage/UnivesityMenuPage";
@@ -36,6 +37,8 @@ export const AuthorizedApp = ({ state }: Props) => {
         return <NewsPage />;
       case State.Calendar:
         return <CalendarPage />;
+      case State.Profile:
+        return <ProfilePage />;
       case State.Pristine:
       default:
         return <HomePage />;

@@ -43,7 +43,7 @@ export const ContactPage = () => {
               rel="noreferrer"
             >
               <Button size="small">
-                <L10n id="seeMore" />
+                <L10n id="see.deansOffice" />
               </Button>
             </a>
           </CardActions>
@@ -67,7 +67,7 @@ export const ContactPage = () => {
               rel="noreferrer"
             >
               <Button size="small">
-                <L10n id="seeMore" />
+                <L10n id="see.vu" />
               </Button>
             </a>
           </CardActions>

@@ -22,7 +22,10 @@ export const UniversityGradeDetailsPage = () => {
           to="/university/grades"
           text={<L10n id="nav.university.grades" />}
         />
-        <Typography color="text.primary">{shortName}</Typography>
+        <Typography>{shortName}</Typography>
+        <Typography color="text.primary">
+          <L10n id="grade.partials" />
+        </Typography>
       </Breadcrumbs>
       <Divider sx={{ marginBottom: 4, marginTop: 2 }} />
       {!!partialSummaries.length ? (

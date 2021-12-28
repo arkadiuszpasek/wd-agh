@@ -1,19 +1,7 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Chip,
-  Container,
-  Typography,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Box, Typography } from "@mui/material";
 import React from "react";
-import { TTimedGrade } from "../../organisms/GradeAccordion/GradeSummary";
-import { GradeSummary } from "../GradeSummary/GradeSummary";
-import { TPartialSummary } from "./TPartialSummary";
 import { FormattedDate } from "react-intl";
-import { Chibage } from "../../atoms/Chibage/Chibadge";
+import { TPartialSummary } from "./TPartialSummary";
 
 export const PartialSummary = ({
   description,
