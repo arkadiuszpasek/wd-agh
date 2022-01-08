@@ -10,6 +10,12 @@ export const strings = {
   "login.password": "Hasło",
   "login.logIn": "Zaloguj",
   "login.forgot": "Zapomniałem hasła",
+  "login.email": "Adres e-mail",
+  "login.recovery.btn": "Kontynuuj",
+  "login.recovery": "Odzyskiwanie hasła",
+  "login.recovery.success":
+    "Na Twój e-mail zostały wysłane instrukcje resetu hasła",
+  back: "Wróć",
 
   "login.button": "Zaloguj",
 

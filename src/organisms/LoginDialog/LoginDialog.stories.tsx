@@ -10,4 +10,6 @@ export default {
 } as ComponentMeta<typeof LoginDialog>;
 
 export const DefaultDialog: ComponentStory<typeof LoginDialog> = () =>
-  renderStoryBook(<LoginDialog onLogIn={() => undefined} />);
+  renderStoryBook(
+    <LoginDialog onLogIn={() => undefined} onForgot={() => undefined} />
+  );

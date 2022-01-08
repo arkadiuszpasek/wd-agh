@@ -6,12 +6,14 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import LoginImage from "../../../assets/agh.jpg";
 import { LoginDialog } from "../../../organisms/LoginDialog/LoginDialog";
 import AghLogo from "../../../assets/aghlogo.jpg";
 import { L10n } from "../../../models/intl/L10n/L10n";
 import { Locale, Locales } from "../../../types/locales";
+import { PasswordRecoveryDialog } from "../../../organisms/PasswordRecoveryDialog/PasswordRecoveryDialog";
+import { PasswordRecoverySuccess } from "../../../organisms/PasswordRecoverySuccess/PasswordRecoverySuccess";
 
 interface Props {
   onLogIn(id: string, password: string): void;
@@ -19,9 +21,52 @@ interface Props {
   setLocale(locale: Locale): void;
 }
 
+enum StateType {
+  Login,
+  Recovery,
+  RecoverySuccess,
+}
+interface LoginState {
+  type: StateType.Login;
+}
+interface RecoveryState {
+  type: StateType.Recovery;
+}
+interface RecoverySuccessState {
+  type: StateType.RecoverySuccess;
+}
+type State = LoginState | RecoveryState | RecoverySuccessState;
+
 export const LoginPageTemplate = ({ onLogIn, locale, setLocale }: Props) => {
   const theme = useTheme();
   const isDownMd = useMediaQuery(theme.breakpoints.down("md"));
+  const [state, setState] = useState<State>({ type: StateType.Login });
+
+  const renderDialog = () => {
+    switch (state.type) {
+      case StateType.Recovery:
+        return (
+          <PasswordRecoveryDialog
+            onBack={() => setState({ type: StateType.Login })}
+            onSubmit={() => setState({ type: StateType.RecoverySuccess })}
+          />
+        );
+      case StateType.RecoverySuccess:
+        return (
+          <PasswordRecoverySuccess
+            onBack={() => setState({ type: StateType.Login })}
+          />
+        );
+      case StateType.Login:
+      default:
+        return (
+          <LoginDialog
+            onLogIn={onLogIn}
+            onForgot={() => setState({ type: StateType.Recovery })}
+          />
+        );
+    }
+  };
 
   return (
     <>
@@ -45,8 +90,7 @@ export const LoginPageTemplate = ({ onLogIn, locale, setLocale }: Props) => {
               width: "auto",
             }}
           />
-
-          <LoginDialog onLogIn={onLogIn} />
+          {renderDialog()}
         </Container>
       ) : (
         <Grid container sx={{ height: "100%" }}>
@@ -75,7 +119,7 @@ export const LoginPageTemplate = ({ onLogIn, locale, setLocale }: Props) => {
                   width: "auto",
                 }}
               />
-              <LoginDialog onLogIn={onLogIn} />
+              {renderDialog()}
             </Container>
           </Grid>
         </Grid>
