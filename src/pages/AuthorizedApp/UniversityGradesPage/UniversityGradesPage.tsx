@@ -27,7 +27,7 @@ export const UniversityGradesPage = () => {
         </Typography>
       </Breadcrumbs>
       <Divider sx={{ marginBottom: 4, marginTop: 2 }} />
-      <GradePage summaries={getTGradeSummaries()} />
+      <GradePage summaries={getTGradeSummaries(page)} />
       <Box display="flex" width="100%" justifyContent="center" my={4}>
         <Pagination count={7} page={page} onChange={handleChange} />
       </Box>
