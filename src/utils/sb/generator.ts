@@ -1,7 +1,7 @@
 import { TPartialSummary } from "../../molecules/PartialSummary/TPartialSummary";
 import {
   TGradeSummary,
-  TGradeSummaryDetails
+  TGradeSummaryDetails,
 } from "../../organisms/GradeAccordion/GradeSummary";
 import { summaries } from "./summaries";
 
@@ -11,7 +11,9 @@ export const getRandom = <T extends unknown>(items: T[]) => {
   return items[ind];
 };
 
-export const getTGradeSummaries = (semesterNumber: number = 7): TGradeSummary[] => {
+export const getTGradeSummaries = (
+  semesterNumber: number = 7
+): TGradeSummary[] => {
   return summaries[semesterNumber - 1];
 };
 
@@ -33,5 +35,3 @@ export const generateTGradeSummary = (): TGradeSummary => {
 export const generatePartialSummary = (): TPartialSummary => {
   return getRandom(getPartialSummaries());
 };
-
-

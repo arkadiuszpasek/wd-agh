@@ -43,9 +43,7 @@ export const semester6: TGradeSummary[] = [
     details: {
       partialGrades: [],
       grade: { grade: 3 as TGrade, timestamp: randomDate() as TTimestamp },
-      teachers: [
-        new Teacher("Jaromir", "Przybyło", "dr inż.")
-      ],
+      teachers: [new Teacher("Jaromir", "Przybyło", "dr inż.")],
       type: "E",
       ects: 3,
       summaries: [
@@ -99,9 +97,7 @@ export const semester6: TGradeSummary[] = [
     details: {
       partialGrades: [],
       grade: { grade: 4 as TGrade, timestamp: randomDate() as TTimestamp },
-      teachers: [
-        new Teacher("Piotr", "Szwed", "dr inż.")
-      ],
+      teachers: [new Teacher("Piotr", "Szwed", "dr inż.")],
       type: "P",
       ects: 3,
       summaries: [
@@ -126,7 +122,7 @@ export const semester6: TGradeSummary[] = [
       grade: { grade: 4 as TGrade, timestamp: randomDate() as TTimestamp },
       teachers: [
         new Teacher("Tomasz", "Szmuc", "prof. dr hab. inż."),
-        new Teacher("Tomasz", "Nabagło", "dr inż.")
+        new Teacher("Tomasz", "Nabagło", "dr inż."),
       ],
       type: "E",
       ects: 3,
@@ -202,9 +198,7 @@ export const semester6: TGradeSummary[] = [
     details: {
       partialGrades: [],
       grade: { grade: 4 as TGrade, timestamp: randomDate() as TTimestamp },
-      teachers: [
-        new Teacher("Adam", "Sędziwy", "dr hab.")
-      ],
+      teachers: [new Teacher("Adam", "Sędziwy", "dr hab.")],
       type: "E",
       ects: 3,
       summaries: [
@@ -397,7 +391,7 @@ export const semester7: TGradeSummary[] = [
       teachers: [
         new Teacher("Sebastian", "Ernst", "dr inż."),
         new Teacher("Bernadetta", "Stachura-Terlecka", "mgr inż."),
-        new Teacher("Szymon", "Bobek", "dr inż.")
+        new Teacher("Szymon", "Bobek", "dr inż."),
       ],
       type: "E",
       ects: 3,
@@ -422,5 +416,5 @@ export const summaries: TGradeSummary[][] = [
   semester6,
   semester7,
   semester6,
-  semester7
+  semester7,
 ];
