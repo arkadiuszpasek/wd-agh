@@ -54,8 +54,7 @@ export const strings: typeof plStrings & any = {
   "contact.deansOffice.description":
     "Electrical Engineering, Automatics, Computer Science and Biomedical Engineering",
   "contact.support": "Tech support",
-  "contact.support.description":
-    "Virtual University issues",
+  "contact.support.description": "Virtual University issues",
 
   "see.news": "See more announcements",
   "see.deansOffice": "Go to dean's office page",
